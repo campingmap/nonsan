@@ -194,24 +194,7 @@
     </a>
   </div>
 
-  <div class="section">
-    <div class="section-label">운행 노선</div>
-    <h2>두 개의 순환 노선</h2>
-    <div class="route-wrap">
-      <div class="route-card">
-        <div class="route-header red-header-bg">
-          <div class="route-dot red-dot-c"></div>
-          <div class="route-title">레드라인</div>
-        </div>
-        <div class="route-body">
-          <div class="stops-flow">
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div><div class="stop-line red-line-c"></div></div><div class="stop-name red-name" style="flex:1;">벌곡 산속 오토캠핑장<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">09:30</span></div></div>
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div><div class="stop-line red-line-c"></div></div><div class="stop-name red-name" style="flex:1;">별바라기 캠핑&펜션<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">09:50</span></div></div>
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div><div class="stop-line red-line-c"></div></div><div class="stop-name red-name" style="flex:1;">지우 캠핑농원<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">10:00</span></div></div>
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div><div class="stop-line red-line-c"></div></div><div class="stop-name red-name" style="flex:1;">큰마당오토캠핑장<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">10:10</span></div></div>
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div><div class="stop-line red-line-c"></div></div><div class="stop-name red-name" style="flex:1;">포레스트 캠핑<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">10:10</span></div></div>
-            <div class="stop-row"><div class="stop-icon"><div class="stop-circle red-dot-c"></div></div><div class="stop-name red-name" style="font-weight:500; flex:1;">강경근대거리 도착<span style="float:right; font-size:11px; color:#c0392b; font-weight:500; margin-left:8px;">11:00</span></div></div>
-          </div>
+
         </div>
       </div>
       <div class="route-card">
@@ -284,7 +267,7 @@
   <div class="section">
     <div class="section-label">논산사랑 상품권</div>
     <h2>논산사랑 상품권</h2>
-    <p style="margin-top:0.5rem; font-size:14px; color:#666; line-height:1.7;">셔틀투어 참가 보증금 1,000원은 논산사랑 상품권으로 환급됩니다.<br>강경근대거리 내 가맹점에서 바로 사용해 보세요!</p>
+    <p style="margin-top:0.5rem; font-size:14px; color:#666; line-height:1.7;">가족당 논산사랑 상품권 10,000원이 지급됩니다.<br>강경근대거리 내 가맹점에서 바로 사용해 보세요!</p>
     <div style="margin-top:1rem;">
       <a href="https://kko.to/WaVn8D9uaW" target="_blank"
         style="display:flex; align-items:center; justify-content:space-between; background:#2d6a3f; color:white; border-radius:12px; padding:14px 18px; text-decoration:none;">
@@ -777,5 +760,29 @@
     document.getElementById('complete-box').style.display = 'flex';
   }
 </script>
+
+<!-- 팝업창 -->
+<div id="popup-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px; box-sizing:border-box;">
+  <div style="background:white; border-radius:16px; padding:24px 20px; max-width:320px; width:100%; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+    <div style="text-align:center; margin-bottom:16px;">
+      <div style="width:48px; height:48px; background:#fff3cd; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 12px;">🔍</div>
+      <div style="font-size:16px; font-weight:600; color:#111; margin-bottom:8px;">입금자를 찾습니다</div>
+      <div style="font-size:22px; font-weight:700; color:#2d6a3f; margin-bottom:12px;">김O수님</div>
+      <div style="font-size:14px; color:#555; line-height:1.7; background:#f7f7f5; border-radius:8px; padding:12px;">
+        신청 내역이 확인되지 않았습니다.<br>
+        카카오톡으로 문의 부탁드려요 🙏
+      </div>
+    </div>
+    <a href="http://pf.kakao.com/_xaXSvn/chat" target="_blank"
+      style="display:block; background:#FEE500; color:#111; border-radius:10px; padding:12px; text-align:center; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:10px;">
+      💬 카카오톡 문의하기
+    </a>
+    <button onclick="document.getElementById('popup-overlay').style.display='none'"
+      style="width:100%; background:#f0f0f0; color:#555; border:none; border-radius:10px; padding:12px; font-size:14px; cursor:pointer;">
+      닫기
+    </button>
+  </div>
+</div>
+
 </body>
 </html>

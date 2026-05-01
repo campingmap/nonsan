@@ -570,11 +570,11 @@
 
       <div class="account-box">
         <div class="account-row"><div class="account-key">은행</div><div class="account-val">카카오뱅크</div></div>
-        <div class="account-row"><div class="account-key">예금주</div><div class="account-val">원호연</div></div>
+        <div class="account-row"><div class="account-key">예금주</div><div class="account-val">전병주</div></div>
         <div class="account-row">
           <div class="account-key">계좌번호</div>
           <div style="display:flex;align-items:center;gap:8px;">
-            <div class="account-val">3333-24-3966761</div>
+            <div class="account-val">7979-31-21945</div>
             <button class="copy-btn" onclick="copyAccount()">복사</button>
           </div>
         </div>
@@ -643,7 +643,7 @@
     <div class="complete-sub" id="complete-sub"></div>
     <div class="complete-summary" id="complete-summary"></div>
     <div class="notice-box" style="text-align:left;width:100%;">
-      카카오뱅크 <strong>3333-24-3966761</strong> (원호연)<br>
+      카카오뱅크 <strong>7979-31-21945</strong> (전병주)<br>
       으로 예약금을 이체해 주세요.<br>
       입금 확인 후 예약이 최종 확정됩니다.
     </div>
@@ -681,7 +681,7 @@
   document.getElementById('kids').addEventListener('change', updateTotal);
 
   function copyAccount() {
-    navigator.clipboard.writeText('3333-24-3966761').then(() => {
+    navigator.clipboard.writeText('7979-31-21945').then(() => {
       const btn = document.querySelector('.copy-btn');
       btn.textContent = '복사됨';
       setTimeout(() => { btn.textContent = '복사'; }, 1500);
@@ -761,28 +761,4 @@
   }
 </script>
 
-<!-- 팝업창 -->
-<div id="popup-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px; box-sizing:border-box;">
-  <div style="background:white; border-radius:16px; padding:24px 20px; max-width:320px; width:100%; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-    <div style="text-align:center; margin-bottom:16px;">
-      <div style="width:48px; height:48px; background:#fff3cd; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 12px;">🔍</div>
-      <div style="font-size:16px; font-weight:600; color:#111; margin-bottom:8px;">입금자를 찾습니다</div>
-      <div style="font-size:22px; font-weight:700; color:#2d6a3f; margin-bottom:12px;">김O수님</div>
-      <div style="font-size:14px; color:#555; line-height:1.7; background:#f7f7f5; border-radius:8px; padding:12px;">
-        신청 내역이 확인되지 않았습니다.<br>
-        카카오톡으로 문의 부탁드려요 🙏
-      </div>
-    </div>
-    <a href="http://pf.kakao.com/_xaXSvn/chat" target="_blank"
-      style="display:block; background:#FEE500; color:#111; border-radius:10px; padding:12px; text-align:center; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:10px;">
-      💬 카카오톡 문의하기
-    </a>
-    <button onclick="document.getElementById('popup-overlay').style.display='none'"
-      style="width:100%; background:#f0f0f0; color:#555; border:none; border-radius:10px; padding:12px; font-size:14px; cursor:pointer;">
-      닫기
-    </button>
-  </div>
-</div>
-
 </body>
-</html>

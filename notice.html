@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약 현황 안내</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #f5f5f3;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+    .badge {
+      display: inline-block;
+      background: #2d6a3f;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .divider { height: 0.5px; background: #e8e8e8; margin-bottom: 20px; }
+
+    .date-block {
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .date-block.closed { background: #fff0f0; border: 0.5px solid #ffcdd2; }
+    .date-block.partial { background: #f7f7f5; border: 0.5px solid #e8e8e8; }
+
+    .date-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap:8px;
+    }
+    .tag-closed {
+      font-size: 11px;
+      font-weight: 600;
+      background: #e53935;
+      color: white;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .tag-partial {
+      font-size: 11px;
+      font-weight: 600;
+      background: #ff8f00;
+      color: white;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    .line-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 0.5px solid rgba(0,0,0,0.06);
+    }
+    .line-row:last-child { border-bottom: none; }
+    .line-name {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: #333;
+    }
+    .dot-red { width: 8px; height: 8px; border-radius: 50%; background: #e74c3c; flex-shrink:0; }
+    .dot-grn { width: 8px; height: 8px; border-radius: 50%; background: #27ae60; flex-shrink:0; }
+    .status-closed { font-size: 12px; font-weight: 600; color: #e53935; }
+    .status-remain { font-size: 12px; font-weight: 600; color: #ff8f00; }
+
+    .notice {
+      margin-top: 16px;
+      background: #eaf6ef;
+      border: 0.5px solid #b2dfc4;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #2d6a3f;
+      line-height: 1.7;
+    }
+    .btn {
+      display: block;
+      margin-top: 16px;
+      background: #2d6a3f;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">예약 현황 안내</div>
+    <h1>논산 캠핑셔틀투어</h1>
+    <p class="subtitle">2026 강경근대거리 셔틀 투어 잔여 현황</p>
+    <div class="divider"></div>
+
+    <!-- 5월 9일 -->
+    <div class="date-block closed">
+      <div class="date-label">
+        5월 9일 (토)
+        <span class="tag-closed">전일정 마감</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-red"></div>레드라인</div>
+        <span class="status-closed">마감</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-grn"></div>그린라인</div>
+        <span class="status-closed">마감</span>
+      </div>
+    </div>
+
+    <!-- 5월 23일 -->
+    <div class="date-block partial">
+      <div class="date-label">
+        5월 23일 (토)
+        <span class="tag-partial">일부 마감</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-red"></div>레드라인</div>
+        <span class="status-remain">10자리 남음</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-grn"></div>그린라인</div>
+        <span class="status-closed">마감</span>
+      </div>
+    </div>
+
+
+    <!-- 6월 6일 -->
+    <div class="date-block partial">
+      <div class="date-label">
+        6월 6일 (토)
+        <span class="tag-partial">일부 마감</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-red"></div>레드라인</div>
+        <span class="status-remain">15자리 남음</span>
+      </div>
+      <div class="line-row">
+        <div class="line-name"><div class="dot-grn"></div>그린라인</div>
+        <span class="status-closed">마감</span>
+      </div>
+    </div>
+
+        <div class="notice">
+      📌 예약 및 문의는 카카오톡 채널로 연락주세요.<br>
+      빠른 예약을 원하시면 아래 버튼을 눌러주세요.
+    </div>
+    <a href="https://campingmap.github.io/nonsan/reservation.html" class="btn">예약하러 가기 →</a>
+  </div>
+</body>
+</html>

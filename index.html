@@ -113,10 +113,77 @@
   .summary-row { display: flex; justify-content: space-between; font-size: 13px; }
   .summary-key { color: #888; }
   .summary-val { font-weight: 500; color: #111; }
+
+  /* ── 팝업 오버레이 ── */
+  #popup-notice {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55); z-index: 9999;
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+  }
+  #popup-notice .card {
+    background: white; border-radius: 20px; padding: 28px 24px;
+    max-width: 360px; width: 100%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    max-height: 90vh; overflow-y: auto;
+  }
+  #popup-notice .badge { display:inline-block; background:#2d6a3f; color:white; font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:14px; }
+  #popup-notice h1 { font-size:20px; font-weight:700; color:#111; margin-bottom:6px; }
+  #popup-notice .subtitle { font-size:13px; color:#888; margin-bottom:20px; }
+  #popup-notice .divider { height:0.5px; background:#e8e8e8; margin-bottom:20px; }
+  #popup-notice .date-block { border-radius:12px; padding:16px; margin-bottom:12px; }
+  #popup-notice .date-block.closed { background:#fff0f0; border:0.5px solid #ffcdd2; }
+  #popup-notice .date-block.partial { background:#f7f7f5; border:0.5px solid #e8e8e8; }
+  #popup-notice .date-label { font-size:15px; font-weight:700; color:#111; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  #popup-notice .tag-closed { font-size:11px; font-weight:600; background:#e53935; color:white; padding:2px 9px; border-radius:20px; }
+  #popup-notice .tag-partial { font-size:11px; font-weight:600; background:#ff8f00; color:white; padding:2px 9px; border-radius:20px; }
+  #popup-notice .line-row { display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:0.5px solid rgba(0,0,0,0.06); }
+  #popup-notice .line-row:last-child { border-bottom:none; }
+  #popup-notice .line-name { display:flex; align-items:center; gap:7px; font-size:13px; color:#333; }
+  #popup-notice .dot-red { width:8px; height:8px; border-radius:50%; background:#e74c3c; flex-shrink:0; }
+  #popup-notice .dot-grn { width:8px; height:8px; border-radius:50%; background:#27ae60; flex-shrink:0; }
+  #popup-notice .status-closed { font-size:12px; font-weight:600; color:#e53935; }
+  #popup-notice .status-remain { font-size:12px; font-weight:600; color:#ff8f00; }
+  #popup-notice .notice-box { margin-top:16px; background:#eaf6ef; border:0.5px solid #b2dfc4; border-radius:10px; padding:12px 14px; font-size:12px; color:#2d6a3f; line-height:1.7; }
+  #popup-notice .popup-btn { display:block; margin-top:10px; background:#2d6a3f; color:white; text-align:center; padding:14px; border-radius:12px; font-size:14px; font-weight:600; text-decoration:none; }
+  #popup-notice .close-btn { display:block; margin-top:8px; background:#f0f0f0; color:#555; text-align:center; padding:12px; border-radius:12px; font-size:14px; cursor:pointer; border:none; width:100%; }
+
 </style>
 
 </head>
 <body>
+
+<!-- ══ 예약 현황 팝업 ══ -->
+<div id="popup-notice">
+  <div class="card">
+    <div class="badge">예약 현황 안내</div>
+    <h1>논산 캠핑셔틀투어</h1>
+    <p class="subtitle">2026 강경근대거리 셔틀 투어 잔여 현황</p>
+    <div class="divider"></div>
+
+    <div class="date-block closed">
+      <div class="date-label">5월 9일 (토) <span class="tag-closed">전일정 마감</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-red"></div>레드라인</div><span class="status-closed">마감</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-grn"></div>그린라인</div><span class="status-closed">마감</span></div>
+    </div>
+
+    <div class="date-block partial">
+      <div class="date-label">5월 23일 (토) <span class="tag-partial">일부 마감</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-red"></div>레드라인</div><span class="status-remain">10자리 남음</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-grn"></div>그린라인</div><span class="status-closed">마감</span></div>
+    </div>
+
+    <div class="date-block partial">
+      <div class="date-label">6월 6일 (토) <span class="tag-partial">일부 마감</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-red"></div>레드라인</div><span class="status-remain">15자리 남음</span></div>
+      <div class="line-row"><div class="line-name"><div class="dot-grn"></div>그린라인</div><span class="status-closed">마감</span></div>
+    </div>
+
+    <div class="notice-box">📌 예약 및 문의는 카카오톡 채널로 연락주세요.</div>
+    <a href="reservation.html" class="popup-btn">예약하러 가기 →</a>
+    <button class="close-btn" onclick="document.getElementById('popup-notice').style.display='none'">닫기</button>
+  </div>
+</div>
+
 
 
   <div class="slider-wrap">
